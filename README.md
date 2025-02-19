@@ -1,4 +1,4 @@
-# 🔥 自媒体平台爬虫🕷️MediaCrawler🔥小红书主页数据下载
+# 🔥 自媒体平台爬虫🕷️MediaCrawler🔥小红书主页数据下载（包括视频、图片）
 
 # Update
 
