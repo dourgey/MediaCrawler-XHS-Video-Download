@@ -12,20 +12,23 @@
 # 基础配置
 PLATFORM = "xhs"
 KEYWORDS = "编程副业,编程兼职"  # 关键词搜索配置，以英文逗号分隔
-LOGIN_TYPE = "qrcode"  # qrcode or phone or cookie
+LOGIN_TYPE = "phone"  # qrcode or phone or cookie
 COOKIES = ""
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
 SORT_TYPE = "popularity_descending"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
 PUBLISH_TIME_TYPE = 0
 CRAWLER_TYPE = (
-    "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
+    "creator"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
 )
 # 自定义User Agent（暂时仅对XHS有效）
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0'
 
 # 是否开启 IP 代理
 ENABLE_IP_PROXY = False
+
+# 跳过登录阶段（适用于浏览器已经保存了登录状态但是登录流程卡在登录流程过不去的情况）
+SKIP_LOGIN = True
 
 # 未启用代理时的最大爬取间隔，单位秒（暂时仅对XHS有效）
 CRAWLER_MAX_SLEEP_SEC = 2
@@ -132,7 +135,7 @@ TIEBA_CREATOR_URL_LIST = [
 
 # 指定小红书创作者ID列表
 XHS_CREATOR_ID_LIST = [
-    "63e36c9a000000002703502b",
+    "5c7c699d000000001801835a",
     # ........................
 ]
 
@@ -185,10 +188,10 @@ STOP_WORDS_FILE = "./docs/hit_stopwords.txt"
 FONT_PATH = "./docs/STZHONGS.TTF"
 
 # 爬取开始的天数，仅支持 bilibili 关键字搜索，YYYY-MM-DD 格式，若为 None 则表示不设置时间范围，按照默认关键字最多返回 1000 条视频的结果处理
-START_DAY = '2024-01-01'
+START_DAY = None
 
 # 爬取结束的天数，仅支持 bilibili 关键字搜索，YYYY-MM-DD 格式，若为 None 则表示不设置时间范围，按照默认关键字最多返回 1000 条视频的结果处理
-END_DAY = '2024-01-01'
+END_DAY = None
 
 # 是否开启按每一天进行爬取的选项，仅支持 bilibili 关键字搜索
 # 若为 False，则忽略 START_DAY 与 END_DAY 设置的值
